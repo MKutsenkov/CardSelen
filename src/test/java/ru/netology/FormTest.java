@@ -22,7 +22,7 @@ public class FormTest {
     static void setUpAll() {
         options = new ChromeOptions();
         options.addArguments("--headless");
-        System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver");
     }
 
     @BeforeEach
@@ -46,3 +46,5 @@ public class FormTest {
         driver.findElement(By.className("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+    }
+}
